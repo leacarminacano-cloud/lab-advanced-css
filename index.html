@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TechMart - a modern mini online store UI built with advanced CSS.">
+  <title>TechMart | Advanced CSS Online Store</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#products">Skip to products</a>
+
+  <!-- ========== HEADER (Flexbox) ========== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="#top" aria-label="TechMart home">
+        <span class="logo__mark" aria-hidden="true"></span>
+        <span class="logo__text">Tech<strong>Mart</strong></span>
+      </a>
+      <nav class="site-header__actions" aria-label="Account and cart">
+        <button class="btn btn--ghost" type="button">Login</button>
+        <button class="btn btn--cart" type="button" aria-label="Cart">
+          <span aria-hidden="true">&#128722;</span> Cart
+          <span class="badge" id="cart-count" aria-live="polite">0</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ========== HERO (pseudo-elements + keyframes) ========== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Weekend Mega Sale</p>
+        <h1 class="hero__title" id="hero-title">Level up your <span class="hero__highlight">setup</span>.</h1>
+        <p class="hero__subtitle">Up to 40% off on selected laptops, headphones, and accessories. Limited stocks only.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#products">Shop Deals</a>
+          <a class="btn btn--outline" href="#filters">Browse Categories</a>
+        </div>
+        <ul class="hero__perks">
+          <li class="chip">Free shipping</li>
+          <li class="chip">1-year warranty</li>
+          <li class="chip">7-day returns</li>
+        </ul>
+      </div>
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__badge">
+          <span class="hero__badge-label">up to</span>
+          <span class="hero__badge-number">40%</span>
+          <span class="hero__badge-label">off</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FILTER (pill buttons) ========== -->
+    <section class="filters" id="filters" aria-labelledby="filters-title">
+      <h2 class="section-title" id="filters-title">Shop by category</h2>
+      <div class="pills" role="group" aria-label="Product categories">
+        <button class="pill pill--active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="pill" type="button" data-filter="laptops" aria-pressed="false">Laptops</button>
+        <button class="pill" type="button" data-filter="headphones" aria-pressed="false">Headphones</button>
+        <button class="pill" type="button" data-filter="accessories" aria-pressed="false">Accessories</button>
+      </div>
+    </section>
+
+    <!-- ========== PRODUCT GRID (CSS Grid) ========== -->
+    <section class="products" id="products" aria-labelledby="products-title">
+      <h2 class="section-title" id="products-title">Featured products</h2>
+
+      <div class="grid">
+        <article class="card card--sale" data-category="laptops" data-rating="4.5">
+          <span class="card__tag">Sale</span>
+          <div class="card__media"><img src="products/ultrabook-pro.svg" alt="Ultrabook Pro 14 inch laptop" width="400" height="300" loading="lazy"></div>
+          <div class="card__body">
+            <h3 class="card__title">Ultrabook Pro 14"</h3>
+            <p class="card__meta">Intel i7 &middot; 16GB RAM &middot; 512GB SSD</p>
+            <p class="card__price"><span class="price">&#8369;54,990</span> <s class="price price--old">&#8369;64,990</s></p>
+            <p class="rating" aria-label="Rated 4.5 out of 5"><span class="rating__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span> <span class="rating__num">(4.5)</span></p>
+          </div>
+          <button class="btn btn--add" type="button">Add to Cart</button>
+        </article>
+
+        <article class="card" data-category="headphones" data-rating="4.8">
+          <div class="card__media"><img src="products/headphones.svg" alt="Noise-canceling over-ear headphones" width="400" height="300" loading="lazy"></div>
+          <div class="card__body">
+            <h3 class="card__title">Noise-Canceling Headphones</h3>
+            <p class="card__meta">Wireless &middot; 30h battery &middot; Fast charge</p>
+            <p class="card__price"><span class="price">&#8369;3,499</span></p>
+            <p class="rating" aria-label="Rated 4.8 out of 5"><span class="rating__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span class="rating__num">(4.8)</span></p>
+          </div>
+          <button class="btn btn--add" type="button">Add to Cart</button>
+        </article>
+
+        <article class="card" data-category="accessories" data-rating="4.2">
+          <div class="card__media"><img src="products/wireless-mouse.svg" alt="Ergonomic wireless mouse" width="400" height="300" loading="lazy"></div>
+          <div class="card__body">
+            <h3 class="card__title">Ergonomic Wireless Mouse</h3>
+            <p class="card__meta">Silent click &middot; 2.4 GHz &middot; USB-C</p>
+            <p class="card__price"><span class="price">&#8369;799</span></p>
+            <p class="rating" aria-label="Rated 4.2 out of 5"><span class="rating__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span> <span class="rating__num">(4.2)</span></p>
+          </div>
+          <button class="btn btn--add" type="button">Add to Cart</button>
+        </article>
+
+        <article class="card card--low" data-category="accessories" data-rating="4.0">
+          <div class="card__media"><img src="products/mechanical-keyboard.svg" alt="RGB mechanical keyboard" width="400" height="300" loading="lazy"></div>
+          <div class="card__body">
+            <h3 class="card__title">Mechanical Keyboard (RGB)</h3>
+            <p class="card__meta">Blue switches &middot; RGB backlight</p>
+            <p class="card__price"><span class="price">&#8369;2,199</span></p>
+            <p class="rating" aria-label="Rated 4.0 out of 5"><span class="rating__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span> <span class="rating__num">(4.0)</span></p>
+          </div>
+          <button class="btn btn--add" type="button">Add to Cart</button>
+        </article>
+
+        <article class="card card--sale card--low" data-category="laptops" data-rating="4.6">
+          <span class="card__tag">Sale</span>
+          <div class="card__media"><img src="products/gaming-laptop.svg" alt="15 inch gaming laptop" width="400" height="300" loading="lazy"></div>
+          <div class="card__body">
+            <h3 class="card__title">Gaming Laptop 15"</h3>
+            <p class="card__meta">Ryzen 7 &middot; RTX 4060 &middot; 144Hz</p>
+            <p class="card__price"><span class="price">&#8369;69,990</span> <s class="price price--old">&#8369;79,990</s></p>
+            <p class="rating" aria-label="Rated 4.6 out of 5"><span class="rating__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span class="rating__num">(4.6)</span></p>
+          </div>
+          <button class="btn btn--add" type="button">Add to Cart</button>
+        </article>
+
+        <article class="card" data-category="headphones" data-rating="4.8">
+          <div class="card__media"><img src="products/earbuds.svg" alt="True wireless earbuds with charging case" width="400" height="300" loading="lazy"></div>
+          <div class="card__body">
+            <h3 class="card__title">Studio Earbuds</h3>
+            <p class="card__meta">True wireless &middot; ANC &middot; IPX5</p>
+            <p class="card__price"><span class="price">&#8369;2,899</span></p>
+            <p class="rating" aria-label="Rated 4.8 out of 5"><span class="rating__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span class="rating__num">(4.8)</span></p>
+          </div>
+          <button class="btn btn--add" type="button">Add to Cart</button>
+        </article>
+      </div>
+
+      <p class="empty" id="empty" hidden>No products in this category yet.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 TechMart Online Store &middot; Advanced CSS Lab Activity</p>
+  </footer>
+
+  <!-- Simple cart counter + category filter (no libraries) -->
+  <script>
+    (function () {
+      var count = 0;
+      var badge = document.getElementById('cart-count');
+      var pills = document.querySelectorAll('.pill');
+      var cards = document.querySelectorAll('.card');
+      var empty = document.getElementById('empty');
+
+      document.querySelectorAll('.btn--add').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var added = btn.classList.toggle('btn--added');
+          btn.textContent = added ? '\u2713 Added' : 'Add to Cart';
+          count += added ? 1 : -1;
+          badge.textContent = count;
+          badge.classList.remove('badge--pop');
+          void badge.offsetWidth;
+          badge.classList.add('badge--pop');
+        });
+      });
+
+      pills.forEach(function (pill) {
+        pill.addEventListener('click', function () {
+          var filter = pill.getAttribute('data-filter');
+          pills.forEach(function (p) {
+            var on = p === pill;
+            p.classList.toggle('pill--active', on);
+            p.setAttribute('aria-pressed', on);
+          });
+          var visible = 0;
+          cards.forEach(function (card) {
+            var show = filter === 'all' || card.getAttribute('data-category') === filter;
+            card.hidden = !show;
+            if (show) visible++;
+          });
+          empty.hidden = visible !== 0;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
